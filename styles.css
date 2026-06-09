@@ -286,15 +286,62 @@ footer a:hover { color: white; }
 .reveal.visible { opacity: 1; transform: none; }
 
 @media (min-width: 901px) {
-  .hero,
-  .hero-grid {
-    min-height: min(680px, calc(100svh - 112px));
+  .hero {
+    min-height: calc(100dvh - 124px);
+    background: #07111f;
   }
-  .hero-grid { padding-block: 48px; }
-  .hero-copy h1 { font-size: clamp(3.6rem, 5vw, 4.8rem); }
-  .hero-role { margin-bottom: 20px; }
-  .role-targets { margin-top: 18px; }
-  .hero-actions { margin: 24px 0 26px; }
+  .hero::after {
+    background:
+      linear-gradient(90deg, rgba(5, 12, 23, .94) 0%, rgba(5, 12, 23, .84) 36%, rgba(5, 12, 23, .32) 68%, rgba(5, 12, 23, .14) 100%),
+      linear-gradient(0deg, rgba(5, 12, 23, .54) 0%, transparent 38%);
+  }
+  .hero-media {
+    inset: 0;
+    background-position: center 46%;
+    filter: saturate(.82) contrast(1.04);
+  }
+  .hero-grid {
+    min-height: calc(100dvh - 124px);
+    grid-template-columns: 1fr;
+    align-content: center;
+    padding-block: clamp(42px, 6vh, 72px);
+  }
+  .hero-copy { max-width: 760px; color: white; }
+  .hero-copy h1 {
+    max-width: 760px;
+    margin-bottom: 18px;
+    font-size: clamp(4.15rem, 5.4vw, 5.5rem);
+    line-height: .96;
+  }
+  .hero .eyebrow { color: #9fc7f4; }
+  .hero-role {
+    max-width: 680px;
+    margin-bottom: 18px;
+    color: white;
+    font-size: clamp(1.18rem, 1.6vw, 1.45rem);
+  }
+  .hero-summary { color: rgba(255,255,255,.76); }
+  .role-targets { margin-top: 20px; }
+  .role-targets span { color: rgba(255,255,255,.62); }
+  .role-targets strong {
+    border-color: rgba(255,255,255,.25);
+    background: rgba(7,17,31,.46);
+    color: white;
+    backdrop-filter: blur(8px);
+  }
+  .hero-actions { margin: 26px 0 26px; }
+  .hero .button-primary { border-color: white; background: white; color: var(--navy); }
+  .hero .button-primary:hover { background: #eaf2fb; }
+  .hero .button-secondary {
+    border-color: rgba(255,255,255,.58);
+    background: rgba(7,17,31,.34);
+    color: white;
+    backdrop-filter: blur(8px);
+  }
+  .hero-meta { color: rgba(255,255,255,.78); }
+  .hero-meta a:hover { color: white; }
+  .hero-visual { display: none; }
+  .capabilities { padding-top: 24px; }
 }
 
 @media (max-width: 1100px) {
