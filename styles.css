@@ -285,6 +285,18 @@ footer a:hover { color: white; }
 .reveal { opacity: 0; transform: translateY(18px); transition: opacity 600ms ease, transform 600ms ease; }
 .reveal.visible { opacity: 1; transform: none; }
 
+@media (min-width: 901px) {
+  .hero,
+  .hero-grid {
+    min-height: min(680px, calc(100svh - 112px));
+  }
+  .hero-grid { padding-block: 48px; }
+  .hero-copy h1 { font-size: clamp(3.6rem, 5vw, 4.8rem); }
+  .hero-role { margin-bottom: 20px; }
+  .role-targets { margin-top: 18px; }
+  .hero-actions { margin: 24px 0 26px; }
+}
+
 @media (max-width: 1100px) {
   .desktop-nav { gap: 12px; }
   .hero-grid { grid-template-columns: .85fr 1.15fr; gap: 30px; }
